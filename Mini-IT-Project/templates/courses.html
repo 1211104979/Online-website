@@ -1,0 +1,49 @@
+{% extends 'index.html'%}
+{% block title%}
+  Masters Gaming Academy - Shopping Cart
+{% endblock%}
+{% block content %}
+<div class="container">
+    <h1 style="margin-left:20px">Courses to Choose</h1>
+    <div class="row">
+        <div class="col-8">
+            <h2>Available courses</h2>
+            <br>
+            <table class="table table-hover table-dark" style="border-radius: 5px;">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Capacity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Schedule</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for classes in classes %}
+                    {% include 'courses_modals.html' %}
+                        {% if classes.capacity > classes.num_student %}    
+                        <tr>
+                            <td>{{ classes.id }}</td>
+                            <td>{{ classes.name }}</td>
+                            <td>{{ classes.num_student }}/{{ classes.capacity }}</td>
+                            <td>RM{{ classes.price }}</td>
+                            <td>Being implemented soon</td>
+                            <td>
+                                <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-MoreInfo-{{ classes.id }}">More Info</button>
+                                <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Modal-PurchaseConfirm-{{ classes.id }}">Take this course</button>
+                            </td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-4">
+            <h2>Choosen courses cart</h2> <!--add cart later-->
+            <h3>Cart to be added later</h3> <!--add cart later-->
+        </div>
+    </div>
+</div>
+{% endblock %}

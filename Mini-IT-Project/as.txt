@@ -1,0 +1,29 @@
+__________________________________________________
+class User(db.Model):
+    email = db.Column(db.String(length=150), nullable=False, unique=True)
+    name = db.Column(db.String(length=100), nullable=False)
+    password1 = db.Column(db.String(length=10), nullable=False)
+    password2 = db.Column(db.String(length=10), nullable=False)
+___________________________________________________
+[
+        {'id':1, name: "Genshin Impact", price:49, description: "nothing yet", 'imgSrc': "./static/genshin-impact.jpg"},
+        {'id':2, name: "Tower Of Fantasy", price:59, description: "nothing yet", 'imgSrc': "./static/genshin-impact.jpg"},
+        {'id':3, name: "Valorant", price:69, description: "nothing yet", 'imgSrc': "./static/VALORANT.jpg"},
+        {'id':4, name: "Apex Legend", price:69, description: "nothing yet", 'imgSrc': "./static/apex-legends.jpg"}
+    ]
+    Class1 = Class(name="Genshin Impact", price=59, description='nothing', capacity='3', schedule=)
+________________________________________________________________________________________________________________________
+###Add classes by Admin###
+
+db.drop_all()
+db.create_all()
+from app import User,Class
+class = Class()
+db.session.add(class)
+db.session.commit()
+________________________________________________________________________________________________________________________
+          {% for students in classes.students: %}
+          <tr>
+              <td>{{ students.name }}</td>
+          </tr>
+          {% endfor %}

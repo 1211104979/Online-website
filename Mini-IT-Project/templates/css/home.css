@@ -1,0 +1,30 @@
+
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  font-family: copperplate, fantasy;
+  color: yellow; 
+}
+
+h2 {
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: orange; 
+}
+
+p {
+  font-family: copperplate, fantasy;
+  font-size: 20px;
+  color: yellow; 
+}
+
+div {
+  background-color: midnightblue;
+}
+
+li { 
+  font-family: copperplate, fantasy;
+  color: yellow;
+}
+

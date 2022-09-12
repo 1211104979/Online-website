@@ -1,0 +1,43 @@
+{% extends 'index.html'%}
+{% block title%}
+  Admin course view
+{% endblock%}
+{% block content %}
+<div class="container">
+    <h1 style="margin-left:20px">Courses to view</h1>
+    <div class="row">
+        <div class="col">
+            <h2>Available courses</h2>
+            <br>
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <!-- Your Columns HERE -->
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Capacity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Schedule</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Your rows inside the table HERE: -->
+                    {% for classes in classes %}
+                    {% include 'courses_modals.html' %}
+                        <tr>
+                            <td>{{ classes.id }}</td>
+                            <td>{{ classes.name }}</td>
+                            <td>{{ classes.num_student }}/{{ classes.capacity }}</td>
+                            <td>RM{{ classes.price }}</td>
+                            <td>Being implemented soon</td>
+                            <td>
+                                <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-MoreInfo-{{ classes.id }}">More Info</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

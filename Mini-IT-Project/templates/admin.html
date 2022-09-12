@@ -1,0 +1,28 @@
+{% extends 'index.html'%}
+{% block title%}
+    ADMIN
+{% endblock%}
+
+{% block content %}
+<div class="container">
+    <div>
+        <h1 align="center">Masters Gaming Academy-ADMIN</h1>
+        <h2>Table after classes is sorted</h2>
+        <h2>Sorted by capacity of all classes</h2>
+        <table class="table table-dark" style="width:40%;">
+                <tr>
+                    <!-- Your Columns HERE -->
+                    <th style="width:20%;">Name</th>
+                    <th style="width:20%;">Number of Students</th>
+                </tr>
+                <!-- Your rows inside the table HERE: -->
+                {% for order in order %}
+                    <tr>
+                        <td>{{ order.name }}</td>
+                        <td style:"text-align:center;">{{ order.num_student }}</td>
+                    </tr>
+                {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

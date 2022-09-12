@@ -1,0 +1,32 @@
+{% extends 'index.html'%}
+{% block title%}
+    {{ current_user.name }}
+{% endblock%}
+{% block content %}
+<div class="container">
+    <h1 style="margin-left:20px">My Class schedule</h1>    
+    <div class="row" style="margin-top:20px; align:center;">
+        <div class="col-4">
+            <p>List of class here</p>
+            <p>Clickable class name to see list of students</p> 
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Courses taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for classes in current_user.classes: %}
+                    {% include 'user_modals.html' %}
+                        <tr>
+                            <td>{{ classes.name }}</td>
+                            <td>
+                               <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-MoreInfo-{{ classes.id }}">Students</button>
+                           </td>                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>  
+        </div>
+    </div>
+</div>
+{% endblock %}

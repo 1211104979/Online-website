@@ -1,0 +1,29 @@
+{% extends 'index.html'%}
+{% block title%}
+    Add Courses
+{% endblock%}
+{% block content %}
+<body>
+    <div class="container">
+        <form method="POST" class="form-add_courses" style="color:white">
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please add Course
+            </h1>
+            {{ form.name.label() }}
+            {{ form.name(class="form-control", placeholder="Course name") }}
+
+            {{ form.price.label() }}
+            {{ form.price(class="form-control", placeholder="Course price") }}
+
+            {{ form.description.label() }}
+            {{ form.description(class="form-control", placeholder="Description of course") }}
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+</body>
+{% endblock %}
